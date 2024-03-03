@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>studying</title>
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <section class=" container mx-auto w-75 my-4 p-3 shadow-lg">
+      <p class="text-center ">CRUD operation </p>
+
+      <div>
+        <label class="  my-2" for="productName"> productName : </label>
+        <input class="  form-control " oninput="productNameValidation()"
+          type="text" id="productName">
+        <p class="alert alert-danger text-center my-2 d-none" id="pNameMssg">
+          productName is invalid it musut start with
+          Uppercase and minLength 4</p>
+      </div>
+      <div>
+        <label class="  my-2" for="productPrice"> productPrice : </label>
+        <input class="  form-control" oninput="productPriceValidation()"
+          type="number" id="productPrice">
+        <p class="alert alert-danger text-center my-2 d-none" id="pPriceMssg">
+          invalid price</p>
+      </div>
+      <div>
+        <label class="  my-2" for="productCategory"> productCategory : </label>
+        <input class="form-control" type="text" id="productCategory">
+      </div>
+      <div>
+        <label class="  my-2" for="productDescription"> productDescription :
+        </label>
+        <input class="form-control" type="text" id="productDescription">
+      </div>
+
+      <button class="btn btn-success my-3 w-100 ms-auto d-block" type="submit"
+        id="addBtn" onclick="AddProduct()"> Add
+        Product </button>
+
+      <button class="btn btn-warning my-3 w-100 ms-auto d-none" type="submit"
+        id="updateBtn" onclick="updateProduct()">
+        update Product </button>
+
+    </section>
+
+    <section class="container mx-auto my-2 w-75   p-3 ">
+      <input type="search" oninput="search(this.value)"
+        placeholder="search By Name . . . "
+        class="my-1 w-50 mx-auto d-block p-1 form-control">
+
+      <table class="table text-center">
+
+        <thead>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+
+        <tbody id="tableBody">
+
+        </tbody>
+      </table>
+
+    </section>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/STYLE.JS"></script>
+  </body>
+
+</html>
